@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "exclude": [".next", ".git", "node_modules", "out", "public"]
+}
