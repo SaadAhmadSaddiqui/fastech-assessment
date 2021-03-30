@@ -1,3 +1,5 @@
+export { userSchema } from './user'
+
 // Joi Validator for the client
 export const validator = (data, schema) => {
   const { error } = schema.validate(data, {
