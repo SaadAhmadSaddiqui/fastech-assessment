@@ -37,6 +37,9 @@ const RightSide = () => {
     try {
       const user = JSON.stringify(values)
       localStorage.setItem('user', user)
+      alert(
+        'User info saved in localStorage. Please check through browser tools.'
+      )
     } catch (error) {
       return error
     }
@@ -81,7 +84,6 @@ const RightSide = () => {
               name="dob"
               autoComplete="on"
               required
-              moveLabel="0%"
             />
             <CheckWrapper radio>
               <Desc>Gender</Desc>
@@ -110,13 +112,13 @@ const RightSide = () => {
               name="nationality"
               label="Nationality"
               mutatorName="setNationality"
+              moveLabel
             />
             <Country
               form={form}
               name="residence"
               label="Country of Residence"
               mutatorName="setResidence"
-              moveLabel="-2%"
             />
             <ContactText>How we can contact you?</ContactText>
             <RegisterMobile country={country} />
@@ -126,7 +128,7 @@ const RightSide = () => {
               name="email"
               autoComplete="on"
               required
-              moveLabel="0%"
+              moveLabel
             />
             <Empty />
             <StyledButton type="submit">Apply Now</StyledButton>

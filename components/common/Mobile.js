@@ -11,9 +11,7 @@ const RegisterMobile = ({ country, noPadding, phoneFont }) => (
     <Field name="mobile">
       {({ input }) => (
         <StyledWrapper noPadding={noPadding} phoneFont={phoneFont}>
-          <Label shrinked move="0%">
-            Contact Number
-          </Label>
+          <CustomLabel shrinked>Contact Number</CustomLabel>
           <PhoneInput
             specialLabel=""
             country={country.code}
@@ -111,6 +109,32 @@ const InputWrapper = styled.div`
     flex: 1 1 100%;
     max-width: 100%;
   }
+`
+
+const CustomLabel = styled(Label)`
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    ${({ focused, shrinked }) => {
+      if (focused || shrinked) {
+        return `
+      transform: scale(0.8);
+      color: #8e27ea;
+      top: 6%;
+      left: 0%;
+      `
+      }
+    }}
+  }
+
+  ${({ focused, shrinked }) => {
+    if (focused || shrinked) {
+      return `
+      transform: scale(0.8);
+      color: #8e27ea;
+      top: 6%;
+      left: 1.8%;
+      `
+    }
+  }}
 `
 
 export default RegisterMobile

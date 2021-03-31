@@ -6,7 +6,7 @@ import DayPicker from 'styles/DayPicker'
 import { BsCalendar } from 'react-icons/bs'
 import Label from 'styles/Label'
 
-const Input = ({ label, type, name, autoComplete, required, moveLabel }) => {
+const Input = ({ label, type, name, autoComplete, required }) => {
   const [focused, setFocused] = useState(false)
   const [shrink, setShrink] = useState(false)
 
@@ -21,9 +21,9 @@ const Input = ({ label, type, name, autoComplete, required, moveLabel }) => {
 
   return (
     <InputWrapper>
-      <Label focused={focused} shrinked={shrink} move={moveLabel}>
+      <CustomLabel focused={focused} shrinked={shrink}>
         {label}
-      </Label>
+      </CustomLabel>
       <DayPicker
         type={type}
         name={name}
@@ -44,7 +44,6 @@ const Input = ({ label, type, name, autoComplete, required, moveLabel }) => {
 Input.propTypes = {
   autoComplete: PropTypes.string,
   label: PropTypes.string,
-  moveLabel: PropTypes.string,
   name: PropTypes.string,
   required: PropTypes.bool,
   type: PropTypes.string
@@ -75,6 +74,32 @@ const Icon = styled(BsCalendar)`
   @media only screen and (max-width: 1024px) and (orientation: portrait) {
     font-size: 16px;
   }
+`
+
+const CustomLabel = styled(Label)`
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    ${({ focused, shrinked }) => {
+      if (focused || shrinked) {
+        return `
+      transform: scale(0.8);
+      color: #8e27ea;
+      top: 6%;
+      left: 0%;
+      `
+      }
+    }}
+  }
+
+  ${({ focused, shrinked }) => {
+    if (focused || shrinked) {
+      return `
+      transform: scale(0.8);
+      color: #8e27ea;
+      top: 6%;
+      left: 1.8%;
+      `
+    }
+  }}
 `
 
 export default Input

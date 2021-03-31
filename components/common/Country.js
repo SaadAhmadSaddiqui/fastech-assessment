@@ -61,9 +61,9 @@ const Country = ({ form, noPadding, name, label, moveLabel, mutatorName }) => {
       <Field name={name}>
         {({ input }) => (
           <ASWrapper noPadding={noPadding}>
-            <Label focused={focused} shrinked={shrink} move={moveLabel}>
+            <CustomLabel focused={focused} shrinked={shrink} move={moveLabel}>
               {label}
-            </Label>
+            </CustomLabel>
             <Autosuggest
               suggestions={suggestions}
               onSuggestionsFetchRequested={onSuggestionsFetchRequested}
@@ -119,6 +119,32 @@ const CountryWrapper = styled.div`
     flex: 1 1 100%;
     max-width: 100%;
   }
+`
+
+const CustomLabel = styled(Label)`
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    ${({ focused, shrinked, move }) => {
+      if (focused || shrinked) {
+        return `
+      transform: scale(0.8);
+      color: #8e27ea;
+      top: 6%;
+      left: ${move ? '0.5%' : '-2.5%'};
+      `
+      }
+    }}
+  }
+
+  ${({ focused, shrinked, move }) => {
+    if (focused || shrinked) {
+      return `
+      transform: scale(0.8);
+      color: #8e27ea;
+      top: 6%;
+      left: ${move ? '2%' : '0%'};
+      `
+    }
+  }}
 `
 
 export default Country

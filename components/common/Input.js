@@ -20,9 +20,9 @@ const Input = ({ label, type, name, autoComplete, required, moveLabel }) => {
 
   return (
     <InputWrapper>
-      <Label focused={focused} shrinked={shrink} move={moveLabel}>
+      <CustomLabel focused={focused} shrinked={shrink} move={moveLabel}>
         {label}
-      </Label>
+      </CustomLabel>
       <StyledInput
         type={type}
         name={name}
@@ -69,6 +69,31 @@ const StyledInput = styled(TextInput)`
     padding: 20px 10px 5px;
     font-size: 16px;
   }
+`
+const CustomLabel = styled(Label)`
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    ${({ focused, shrinked }) => {
+      if (focused || shrinked) {
+        return `
+      transform: scale(0.8);
+      color: #8e27ea;
+      top: 6%;
+      left: 0%;
+      `
+      }
+    }}
+  }
+
+  ${({ focused, shrinked, move }) => {
+    if (focused || shrinked) {
+      return `
+      transform: scale(0.8);
+      color: #8e27ea;
+      top: 6%;
+      left: ${move ? '1.5%' : '2%'};
+      `
+    }
+  }}
 `
 
 export default Input
