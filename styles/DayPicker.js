@@ -4,8 +4,13 @@ import DatePicker from 'react-datepicker'
 
 const DayPicker = styled(Field).attrs({
   // eslint-disable-next-line
-  component:({ input: { onChange, value }, ...rest }) => (
-    <DatePicker selected={value} onChange={date => onChange(date)} {...rest} />
+  component: ({ input: { onChange, value }, ...rest }) => (
+    <DatePicker
+      popperClassName="popper"
+      selected={value}
+      onChange={date => onChange(date)}
+      {...rest}
+    />
   )
 })`
   background-color: #efefef;

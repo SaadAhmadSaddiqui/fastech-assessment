@@ -34,6 +34,10 @@ const GlobalStyles = createGlobalStyle`
     font-family: Sora, Helvetica Neue, Helvetica, Arial, sans-serif;
   }
 
+  .popper {
+    z-index: 200;
+  }
+
 `
 
 export default GlobalStyles
