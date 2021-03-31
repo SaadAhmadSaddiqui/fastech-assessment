@@ -35,7 +35,8 @@ const RightSide = () => {
 
   const onSubmit = async values => {
     try {
-      console.log(values)
+      const user = JSON.stringify(values)
+      localStorage.setItem('user', user)
     } catch (error) {
       return error
     }

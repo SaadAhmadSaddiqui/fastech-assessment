@@ -31,6 +31,9 @@ const Input = ({ label, type, name, autoComplete, required, moveLabel }) => {
         required={required}
         onFocus={() => setFocused(true)}
         onBlur={onBlur}
+        showYearDropdown
+        dateFormatCalendar="MMMM"
+        maxDate={new Date()}
       />
       <Icon />
       <Error name={name} />
