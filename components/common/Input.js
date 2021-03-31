@@ -50,11 +50,10 @@ const InputWrapper = styled.div`
   flex: 1 1 49%;
   max-width: 49%;
   display: flex;
-  flex-flow: column;
+  flex-flow: wrap;
   gap: 5px;
 
-  @media only screen and (max-width: 520px) {
-    order: 1;
+  @media only screen and (max-width: 538px) {
     flex: 1 1 100%;
     max-width: 100%;
   }
@@ -62,8 +61,14 @@ const InputWrapper = styled.div`
 
 const StyledInput = styled(TextInput)`
   flex: 1 1 auto;
-  padding: calc((100vw * 1.1) / 100) calc((100vw * 1) / 100);
+  padding: calc((100vw * 1) / 100);
+  padding-bottom: calc((100vw * 0.4) / 100);
   font-size: calc((100vw * 0.8) / 100);
+
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    padding: 20px 10px 5px;
+    font-size: 16px;
+  }
 `
 
 export default Input

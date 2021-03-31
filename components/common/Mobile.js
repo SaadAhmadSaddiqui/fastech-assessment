@@ -11,7 +11,7 @@ const RegisterMobile = ({ country, noPadding, phoneFont }) => (
     <Field name="mobile">
       {({ input }) => (
         <StyledWrapper noPadding={noPadding} phoneFont={phoneFont}>
-          <Label shrinked move="1.5%">
+          <Label shrinked move="0%">
             Contact Number
           </Label>
           <PhoneInput
@@ -61,7 +61,12 @@ RegisterMobile.propTypes = {
 }
 
 const StyledWrapper = styled.div`
-  .react-tel-input .form-control {
+  flex: 1 1 100%;
+  .react-tel-input {
+    display: flex;
+  }
+
+  .form-control {
     background-color: #efefef;
     font-family: inherit;
     font-weight: 400;
@@ -70,8 +75,13 @@ const StyledWrapper = styled.div`
     border-radius: 5px;
     transition: 0.2s;
     flex: 1 1 auto;
-    padding: calc((100vw * 1.1) / 100) calc((100vw * 1) / 100);
-    width: 91%;
+    padding: calc((100vw * 1) / 100);
+    padding-bottom: calc((100vw * 0.4) / 100);
+
+    @media only screen and (max-width: 1024px) and (orientation: portrait) {
+      padding: 20px 10px 5px;
+      font-size: 16px;
+    }
 
     &:focus {
       outline: 0;
@@ -79,14 +89,8 @@ const StyledWrapper = styled.div`
     }
   }
 
-  .react-tel-input .selected-flag {
-    width: 48px;
-    padding: 0 0 0 13px;
-  }
-
   .react-tel-input .flag-dropdown {
-    background-color: transparent;
-    border: none;
+    display: none;
   }
 
   .react-tel-input .flag-dropdown:hover .selected-flag,
@@ -101,11 +105,9 @@ const InputWrapper = styled.div`
   flex: 1 1 49%;
   max-width: 49%;
   display: flex;
-  flex-flow: column;
   gap: 5px;
 
-  @media only screen and (max-width: 520px) {
-    order: 1;
+  @media only screen and (max-width: 538px) {
     flex: 1 1 100%;
     max-width: 100%;
   }

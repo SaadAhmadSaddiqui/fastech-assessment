@@ -44,6 +44,7 @@ const RightSide = () => {
 
   return (
     <Container>
+      <Logo>digg</Logo>
       <Title>Apply now to work in Dubai </Title>
       <Form
         onSubmit={onSubmit}
@@ -80,7 +81,7 @@ const RightSide = () => {
               name="dob"
               autoComplete="on"
               required
-              moveLabel="2%"
+              moveLabel="0%"
             />
             <CheckWrapper radio>
               <Desc>Gender</Desc>
@@ -115,7 +116,7 @@ const RightSide = () => {
               name="residence"
               label="Country of Residence"
               mutatorName="setResidence"
-              moveLabel="0%"
+              moveLabel="-2%"
             />
             <ContactText>How we can contact you?</ContactText>
             <RegisterMobile country={country} />
@@ -125,7 +126,7 @@ const RightSide = () => {
               name="email"
               autoComplete="on"
               required
-              moveLabel="1%"
+              moveLabel="0%"
             />
             <Empty />
             <StyledButton type="submit">Apply Now</StyledButton>
@@ -137,18 +138,45 @@ const RightSide = () => {
 }
 
 const Container = styled.div`
+  position: relative;
   flex: 1 1 50%;
   display: flex;
   flex-flow: column;
   align-items: stretch;
-  justify-content: center;
-  /* background-color: red; */
+  padding: 20px;
+
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    height: 100%;
+    flex: 1 1 100%;
+  }
+`
+
+const Logo = styled.h1`
+  display: none;
+  margin: 0 0 60px;
+  font-size: 50px;
+  font-family: IBMPlexSans;
+  font-weight: 700;
+  color: #000;
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    display: block;
+  }
 `
 
 const Title = styled.h1`
+  font-weight: 600;
   font-size: calc((100vw * 2) / 100);
   text-align: center;
   margin-bottom: calc((100vw * 2) / 100);
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  @media only screen and (max-width: 538px) {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
 `
 
 const StyledForm = styled.form`
@@ -156,8 +184,9 @@ const StyledForm = styled.form`
   flex-flow: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 calc((100vw * 1) / 100);
-  gap: calc((100vw * 0.2) / 100);
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    gap: 10px;
+  }
   /* background-color: pink; */
 `
 
@@ -166,7 +195,7 @@ const StyledButton = styled(Button)`
   max-width: 20%;
   display: flex;
   background-image: linear-gradient(to right, #9733ee 51%, #da22ff 100%);
-  border-radius: calc((100vw * 1.4) / 100);
+  border-radius: calc((100vw * 2) / 100);
   align-items: center;
   justify-content: center;
   align-self: flex-end;
@@ -174,13 +203,19 @@ const StyledButton = styled(Button)`
   height: calc((100vw * 3.2) / 100);
   font-size: calc((100vw * 1) / 100);
 
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    border-radius: 40px;
+    height: 43px;
+    font-size: 13px;
     flex: 1 1 100%;
+    max-width: 50%;
+    margin: 10px 0 0;
   }
 
-  @media only screen and (max-width: 520px) {
-    flex: 1 1 100%;
-    max-width: 100%;
+  @media only screen and (max-width: 720px) {
+  }
+
+  @media only screen and (max-width: 538px) {
   }
 `
 
@@ -191,6 +226,10 @@ const CheckWrapper = styled.div`
   margin-bottom: calc((100vw * -1) / 100);
   flex-basis: 49%;
   max-width: 49%;
+
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    flex: 1 1 100%;
+  }
   /* background-color: pink; */
 `
 const RadioWrapper = styled.div`
@@ -202,6 +241,11 @@ const Label = styled.label`
   flex: 1 1 100%;
   font-size: calc((100vw * 0.9) / 100);
   font-weight: 300;
+
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    flex: 1 1 100%;
+    font-size: 13px;
+  }
 `
 
 const Desc = styled.label`
@@ -209,17 +253,31 @@ const Desc = styled.label`
   font-weight: 300;
   font-size: calc((100vw * 0.9) / 100);
   color: #141212;
+
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    flex: 1 1 100%;
+    font-size: 16px;
+  }
 `
 
 const ContactText = styled.h2`
   flex: 1 1 100%;
   margin: calc((100vw * 0.8) / 100) 0;
   font-size: calc((100vw * 1.5) / 100);
+
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    margin: 10px 0;
+    font-size: 20px;
+    flex: 1 1 100%;
+  }
 `
 
 const Empty = styled.div`
   flex: 1 1 49%;
   max-width: 49%;
+  @media only screen and (max-width: 538px) {
+    display: none;
+  }
 `
 
 export default RightSide

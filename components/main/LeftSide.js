@@ -44,6 +44,10 @@ const Container = styled.div`
   display: flex;
   align-items: flex-start;
   overflow: hidden;
+
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    display: none;
+  }
   /* background-color: red; */
 `
 

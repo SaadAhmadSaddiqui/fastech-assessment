@@ -115,8 +115,7 @@ const CountryWrapper = styled.div`
   flex-flow: column;
   gap: 5px;
 
-  @media only screen and (max-width: 520px) {
-    order: 1;
+  @media only screen and (max-width: 538px) {
     flex: 1 1 100%;
     max-width: 100%;
   }

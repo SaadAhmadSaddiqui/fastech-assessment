@@ -26,6 +26,10 @@ const Message = styled.div`
   font-weight: 300;
   text-align: left;
   grid-column: 1 / -1;
+
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    font-size: 13px;
+  }
 `
 
 export default Error

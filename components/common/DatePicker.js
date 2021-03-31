@@ -58,10 +58,8 @@ const InputWrapper = styled.div`
   margin: 10px 0px 0px;
   flex-flow: column;
   gap: 5px;
-  /* background-color: pink; */
 
-  @media only screen and (max-width: 520px) {
-    order: 1;
+  @media only screen and (max-width: 538px) {
     flex: 1 1 100%;
     max-width: 100%;
   }
@@ -73,6 +71,10 @@ const Icon = styled(BsCalendar)`
   color: #333030;
   right: 7%;
   top: 33%;
+
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    font-size: 16px;
+  }
 `
 
 export default Input

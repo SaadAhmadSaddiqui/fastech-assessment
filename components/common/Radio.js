@@ -31,6 +31,13 @@ const Checkmark = styled.span`
   border-radius: calc((100vw * 0.3) / 100);
   pointer-events: none;
   transition: 0.3s;
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    height: 15px;
+    width: 15px;
+    border-radius: 3px;
+    left: 5px;
+    top: 3px;
+  }
 `
 
 const Stem = styled.div`
@@ -42,6 +49,12 @@ const Stem = styled.div`
   left: calc((100vw * 0.65) / 100);
   top: calc((100vw * 0.24) / 100);
   transform: rotate(30deg);
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    width: 2px;
+    height: 9px;
+    left: 9px;
+    top: 3px;
+  }
 `
 
 const Kick = styled.div`
@@ -53,6 +66,12 @@ const Kick = styled.div`
   left: calc((100vw * 0.28) / 100);
   top: calc((100vw * 0.6) / 100);
   transform: rotate(30deg);
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    width: 6px;
+    height: 2px;
+    left: 3px;
+    top: 8px;
+  }
 `
 
 const RadioInput = styled.input`
@@ -69,6 +88,9 @@ const RadioInput = styled.input`
         rgba(218, 34, 255, 1) 100%
       );
     }
+  }
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    margin: 5px 5px;
   }
 `
 

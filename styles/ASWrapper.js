@@ -18,8 +18,14 @@ export const ASWrapper = styled.div`
     font-size: calc((100vw * 0.8) / 100);
     border: 1px solid transparent;
     padding: calc((100vw * 1) / 100);
+    padding-bottom: calc((100vw * 0.4) / 100);
     border-radius: 5px;
     transition: 0.2s;
+
+    @media only screen and (max-width: 1024px) and (orientation: portrait) {
+      padding: 20px 10px 5px;
+      font-size: 16px;
+    }
 
     &:focus {
       outline: 0;
@@ -47,6 +53,12 @@ export const ASWrapper = styled.div`
     z-index: 2;
     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.35);
     border-radius: 0 0 3px 3px;
+
+    @media only screen and (max-width: 1024px) and (orientation: portrait) {
+      top: 50px;
+      width: 200px;
+      font-size: 12px;
+    }
   }
 
   .react-autosuggest__suggestions-list {
@@ -58,6 +70,10 @@ export const ASWrapper = styled.div`
   .react-autosuggest__suggestion {
     cursor: pointer;
     padding: calc((100vw * 0.5) / 100) calc((100vw * 1) / 100);
+
+    @media only screen and (max-width: 1024px) and (orientation: portrait) {
+      padding: 5px;
+    }
   }
 
   .react-autosuggest__suggestion--highlighted {
@@ -71,4 +87,8 @@ export const IconDown = styled(FaCaretDown)`
   color: #333030;
   right: 7%;
   top: 33%;
+
+  @media only screen and (max-width: 1024px) and (orientation: portrait) {
+    font-size: 16px;
+  }
 `
